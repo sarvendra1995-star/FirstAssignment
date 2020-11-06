@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <h1>Indian Time Zone</h1>
+    <style>
+        #Clock {
+            font-size: 80px;
+            width: 500px;
+            margin: 100px;
+            text-align: center;
+            border: 2ps solid block;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="Clock">10:00:00</div>
+    <button>12 Hour</button>
+    <button>24 Hour</button>
+    <script>
+     setInterval(showTime,1000);
+     function showTime() {
+         let time = new Date();
+         let hour= time.getHours();
+         if(hour<10)
+         hour="0"+hour;
+         let min=time.getMinutes();
+         if(min<10)
+         min="0"+min;
+         let sec=time.getSeconds();
+         if(sec<10)
+         sec="0"+sec;
+         let final=hour+":"+min+":"+sec;
+         document.getElementById("Clock").innerHTML=final;
+     }
+    </script>
+    
+</body>
+</html>
